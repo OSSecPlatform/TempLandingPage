@@ -1,0 +1,646 @@
+/* ============================================
+   RestingOwl — Coming Soon Landing Page
+   Light Theme · Brand Colors from Logo
+   Navy #162340 + Green #4db84e
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Brand Colors (from logo) */
+  --navy: #162340;
+  --navy-mid: #1e3058;
+  --navy-light: #2a4070;
+  --green: #4db84e;
+  --green-dark: #389e3a;
+  --green-light: #6dcf6e;
+
+  /* Light Theme Surfaces */
+  --bg: #f5f7fa;
+  --bg-white: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #f0f4f8;
+
+  /* Text */
+  --text-primary: #0e1b30;
+  --text-secondary: #3a4e6e;
+  --text-muted: #7a90b0;
+
+  /* Borders */
+  --border: rgba(22, 35, 64, 0.10);
+  --border-hover: rgba(22, 35, 64, 0.25);
+
+  /* Glows / Shadows */
+  --shadow-navy: rgba(22, 35, 64, 0.10);
+  --shadow-green: rgba(77, 184, 78, 0.20);
+
+  --font-main: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ─── Background Effects ─── */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(22, 35, 64, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 35, 64, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(130px);
+  pointer-events: none;
+  z-index: 0;
+  animation: pulse-glow 9s ease-in-out infinite alternate;
+}
+
+.bg-glow--teal {
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(77, 184, 78, 0.13) 0%, transparent 70%);
+  top: -200px;
+  right: -150px;
+  animation-delay: 0s;
+}
+
+.bg-glow--purple {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(22, 35, 64, 0.08) 0%, transparent 70%);
+  bottom: -150px;
+  left: -150px;
+  animation-delay: -4.5s;
+}
+
+@keyframes pulse-glow {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+#particles-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Header ─── */
+.header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 48px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-mark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+}
+
+/* ─── Navy Accent Banner ─── */
+.navy-banner {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--navy);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 11px 24px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.navy-banner__icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.navy-banner__tag {
+  background: var(--green);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 100px;
+  flex-shrink: 0;
+}
+
+.header-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green-dark);
+  background: rgba(77, 184, 78, 0.10);
+  border: 1.5px solid rgba(77, 184, 78, 0.35);
+  padding: 7px 16px;
+  border-radius: 100px;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 7px var(--green);
+  animation: blink 1.8s ease-in-out infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.25;
+  }
+}
+
+/* ─── Hero ─── */
+.hero {
+  flex: 1;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 70px 24px 90px;
+}
+
+/* Pill badge */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-white);
+  border: 1.5px solid var(--border);
+  padding: 8px 20px;
+  border-radius: 100px;
+  margin-bottom: 44px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 12px var(--shadow-navy);
+  animation: fade-up 0.6s ease both;
+}
+
+.pill-icon {
+  font-size: 1rem;
+}
+
+/* Hero Title */
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 24px;
+}
+
+.title-line {
+  display: block;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  color: var(--navy);
+  animation: fade-up 0.6s ease both;
+}
+
+.title-line--accent {
+  color: var(--green);
+  animation-delay: 0.1s;
+}
+
+.title-line--sub {
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: -0.01em;
+  animation-delay: 0.2s;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 52px;
+  font-weight: 400;
+  animation: fade-up 0.6s ease both;
+  animation-delay: 0.3s;
+}
+
+.inline-code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--green-dark);
+  background: rgba(77, 184, 78, 0.12);
+  padding: 2px 8px;
+  border-radius: 5px;
+  border: 1px solid rgba(77, 184, 78, 0.25);
+  font-weight: 600;
+}
+
+/* ─── NPM Teaser ─── */
+.npm-teaser {
+  background: var(--bg-white);
+  border: 1.5px solid var(--border);
+  border-radius: 18px;
+  padding: 26px 32px;
+  margin-bottom: 56px;
+  max-width: 560px;
+  width: 100%;
+  animation: fade-up 0.6s ease both;
+  animation-delay: 0.4s;
+  box-shadow: 0 4px 24px var(--shadow-navy),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  position: relative;
+  overflow: hidden;
+}
+
+.npm-teaser::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--navy), var(--green));
+  border-radius: 18px 18px 0 0;
+}
+
+.npm-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-dark);
+  margin-bottom: 16px;
+}
+
+.npm-commands {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.npm-cmd {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  background: var(--bg-card-subtle);
+  padding: 11px 16px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  text-align: left;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.npm-cmd:hover {
+  border-color: rgba(77, 184, 78, 0.3);
+  background: rgba(77, 184, 78, 0.05);
+}
+
+.cmd-prefix {
+  color: var(--green-dark);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.cmd-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--navy);
+}
+
+.npm-cmd:last-child .cmd-text::after {
+  content: '|';
+  color: var(--green);
+  animation: cursor-blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes cursor-blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ─── Email Signup ─── */
+.signup-section {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 60px;
+  animation: fade-up 0.6s ease both;
+  animation-delay: 0.5s;
+}
+
+.signup-label {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.signup-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.input-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  color: var(--text-muted);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.email-input {
+  width: 100%;
+  background: var(--bg-white);
+  border: 1.5px solid var(--border);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  padding: 14px 16px 14px 44px;
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  box-shadow: 0 2px 8px var(--shadow-navy);
+}
+
+.email-input::placeholder {
+  color: var(--text-muted);
+}
+
+.email-input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(77, 184, 78, 0.15);
+}
+
+.notify-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--navy);
+  color: #ffffff;
+  font-family: var(--font-main);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.notify-btn:hover {
+  background: var(--navy-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(22, 35, 64, 0.25);
+}
+
+.notify-btn:active {
+  transform: translateY(0);
+}
+
+.btn-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s;
+}
+
+.notify-btn:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+/* Success */
+.signup-success {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(77, 184, 78, 0.08);
+  border: 1.5px solid rgba(77, 184, 78, 0.35);
+  color: var(--green-dark);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 14px 20px;
+  border-radius: 12px;
+  animation: fade-up 0.4s ease both;
+}
+
+.signup-success.visible {
+  display: flex;
+}
+
+.success-icon {
+  font-size: 1.1rem;
+}
+
+.signup-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* ─── Feature Pills ─── */
+.features-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  max-width: 700px;
+  animation: fade-up 0.6s ease both;
+  animation-delay: 0.6s;
+}
+
+.feature-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--bg-white);
+  border: 1.5px solid var(--border);
+  padding: 10px 18px;
+  border-radius: 100px;
+  cursor: default;
+  box-shadow: 0 2px 8px var(--shadow-navy);
+  transition: border-color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-pill:hover {
+  border-color: var(--green);
+  background: rgba(77, 184, 78, 0.06);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px var(--shadow-green);
+}
+
+.feature-icon {
+  font-size: 1rem;
+}
+
+/* ─── Footer ─── */
+.footer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 24px 48px 32px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--border);
+}
+
+.footer-text {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ─── Animations ─── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 640px) {
+  .header {
+    padding: 18px 20px;
+  }
+
+  .signup-form {
+    flex-direction: column;
+  }
+
+  .notify-btn {
+    justify-content: center;
+  }
+
+  .npm-teaser {
+    padding: 20px;
+  }
+
+  .hero {
+    padding: 50px 20px 70px;
+  }
+}

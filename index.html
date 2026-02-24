@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RestingOwl — Build freely. Sleep peacefully.</title>
+  <meta name="description"
+    content="RestingOwl is a curated collection of OWASP-compliant security libraries for Node.js developers. Install via npm and build secure apps without writing security from scratch." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Animated Background -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--teal"></div>
+  <div class="bg-glow bg-glow--purple"></div>
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo-mark">
+      <img src="owl-logo.png" alt="RestingOwl owl logo" class="logo-img" />
+      <span class="logo-text">RestingOwl</span>
+    </div>
+    <div class="header-badge">
+      <span class="badge-dot"></span>
+      Coming Soon
+    </div>
+  </header>
+
+  <!-- Navy Accent Banner -->
+  <div class="navy-banner">
+    <span class="navy-banner__icon">🔒</span>
+    Secure by design. One platform. All your OWASP coverage.
+    <span class="navy-banner__tag">Coming Soon</span>
+  </div>
+
+  <!-- Hero -->
+  <main class="hero">
+
+    <!-- Pill badge -->
+    <div class="pill-badge">
+      <span class="pill-icon">🛡️</span>
+      OWASP-compliant · npm-ready · Minimal config required
+    </div>
+
+    <!-- Main heading -->
+    <h1 class="hero-title">
+      <span class="title-line">Build freely.</span>
+      <span class="title-line title-line--accent">Sleep peacefully.</span>
+      <span class="title-line title-line--sub">Let the owl watch.</span>
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="hero-subtitle">
+      OWASP-aligned security packages for developers.<br />
+      Drop into any project with a single <code class="inline-code">npm install</code>.
+    </p>
+
+    <!-- NPM teaser -->
+    <div class="npm-teaser">
+      <span class="npm-label">Coming to npm soon →</span>
+      <div class="npm-commands">
+        <div class="npm-cmd">
+          <span class="cmd-prefix">$</span>
+          <span class="cmd-text" id="typewriter-cmd">npm install @restingowl/auth-guard</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Email signup -->
+    <!-- <div class="signup-section">
+      <p class="signup-label">Get notified when we launch</p>
+      <form class="signup-form" id="signup-form">
+        <div class="input-wrapper">
+          <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          <input id="email-input" type="email" class="email-input" placeholder="your@email.com" required
+            autocomplete="email" />
+        </div>
+        <button type="submit" class="notify-btn" id="notify-btn">
+          <span class="btn-text">Notify Me</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </form>
+      <div class="signup-success" id="signup-success">
+        <span class="success-icon">✓</span>
+        You're on the list! We'll reach out when RestingOwl is live.
+      </div>
+      <p class="signup-note">No spam, ever. Just a launch notification.</p>
+    </div> -->
+
+    <!-- Feature pills -->
+    <div class="features-row">
+      <div class="feature-pill">
+        <span class="feature-icon">🔐</span>
+        Auth & Session Security
+      </div>
+      <div class="feature-pill">
+        <span class="feature-icon">🧹</span>
+        Input Sanitization
+      </div>
+      <div class="feature-pill">
+        <span class="feature-icon">🚦</span>
+        Rate Limiting
+      </div>
+      <div class="feature-pill">
+        <span class="feature-icon">🔑</span>
+        Secrets Management
+      </div>
+      <div class="feature-pill">
+        <span class="feature-icon">📋</span>
+        Audit Logging
+      </div>
+      <div class="feature-pill">
+        <span class="feature-icon">🛡️</span>
+        CSRF Protection
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-text">
+      Powered by <a href="https://hashbaze.com" target="_blank" rel="noopener noreferrer"></a>HashBaze</a>
+    </p>
+    <p class="footer-copy">© 2026 RestingOwl. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
